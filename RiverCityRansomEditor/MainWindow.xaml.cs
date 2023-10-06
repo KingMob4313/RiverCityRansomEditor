@@ -1,17 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Collections.Generic;
 
 namespace RiverCityRansomEditor
 {
@@ -23,6 +14,45 @@ namespace RiverCityRansomEditor
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void LoadButton_Click(object sender, RoutedEventArgs e)
+        {
+            byte[] fileBytes = RomHandlingFile();
+            var x = "x";
+        }
+
+        private byte[] RomHandlingFile()
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+            try
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "NES roms (*.nes)|*.nes|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == true)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+                    using (var fileStream = File.OpenRead(filePath))
+                    {
+                        using (MemoryStream memoryStream = new MemoryStream())
+                        {
+                            fileStream.CopyTo(memoryStream);
+                            return memoryStream.ToArray();
+                        }
+                    }
+                }
+                return null;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

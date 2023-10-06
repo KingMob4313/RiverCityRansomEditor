@@ -62,16 +62,16 @@ namespace RiverCityEditor
             currentGangBanger.GangId = currentGangMemberIndex;
             currentGangBanger.Name = GetGangMemberName(currentRomLocation); //romByes[currentRomLocation].ToString();
 
-            currentGangBanger.Stamina = romByes[currentRomLocation + currentGangBanger.Name.Length];
-            currentGangBanger.Punch = romByes[currentRomLocation + currentGangBanger.Name.Length + 1];
-            currentGangBanger.Kick = romByes[currentRomLocation + currentGangBanger.Name.Length + 2];
-            currentGangBanger.Weapon = romByes[currentRomLocation + currentGangBanger.Name.Length + 3];
-            currentGangBanger.Throwing = romByes[currentRomLocation + currentGangBanger.Name.Length + 4];
-            currentGangBanger.Agility = romByes[currentRomLocation + currentGangBanger.Name.Length + 5];
-            currentGangBanger.Defense = romByes[currentRomLocation + currentGangBanger.Name.Length + 6];
-            currentGangBanger.Strength = romByes[currentRomLocation + currentGangBanger.Name.Length + 7];
-            currentGangBanger.Willpower = romByes[currentRomLocation + currentGangBanger.Name.Length + 8];
-            currentGangBanger.Cash = GetGangMemberCash(currentGangBanger.Name.Length + 9); //romByes[currentRomLocation + 1];
+            currentGangBanger.Stamina = Convert.ToInt32(romByes[currentRomLocation + currentGangBanger.Name.Length]);
+            currentGangBanger.Punch = Convert.ToInt32(romByes[currentRomLocation + currentGangBanger.Name.Length + 1]);
+            currentGangBanger.Kick = Convert.ToInt32(romByes[currentRomLocation + currentGangBanger.Name.Length + 2]);
+            currentGangBanger.Weapon = Convert.ToInt32(romByes[currentRomLocation + currentGangBanger.Name.Length + 3]);
+            currentGangBanger.Throwing = Convert.ToInt32(romByes[currentRomLocation + currentGangBanger.Name.Length + 4]);
+            currentGangBanger.Agility = Convert.ToInt32(romByes[currentRomLocation + currentGangBanger.Name.Length + 5]);
+            currentGangBanger.Defense = Convert.ToInt32(romByes[currentRomLocation + currentGangBanger.Name.Length + 6]);
+            currentGangBanger.Strength = Convert.ToInt32(romByes[currentRomLocation + currentGangBanger.Name.Length + 7]);
+            currentGangBanger.Willpower = Convert.ToInt32(romByes[currentRomLocation + currentGangBanger.Name.Length + 8]);
+            currentGangBanger.Cash = Convert.ToInt32(GetGangMemberCash(currentGangBanger.Name.Length + 9)); //romByes[currentRomLocation + 1];
 
             return currentGangBanger;
         }

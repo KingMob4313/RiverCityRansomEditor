@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="638.281">
     <Grid>
-        
+        <TabControl HorizontalAlignment="Left" Height="354" VerticalAlignment="Top" Width="612" Margin="10,56,0,0" IsEnabled="false">
+            <TabItem Header="Gang">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Gang Member">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Store">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Menu">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Product">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        <Label Content="File:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="103,10,0,0" Height="25"  RenderTransformOrigin="0.459,0.374"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="476" Margin="146,10,0,0"/>
+        <Button Content="Load File" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,10,0,0" Height="25" x:Name="LoadButton" Click="LoadButton_Click"/>
     </Grid>
 </Window>
